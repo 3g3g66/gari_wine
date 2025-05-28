@@ -1,0 +1,400 @@
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Wine List
+  </title>
+  <style>
+   body {
+    font-family: 'EB Garamond', serif;
+    background-color: #f0eee4;
+    color: #17110c;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+    padding: 1em;
+    font-size: 1.6em;
+    background-color: #e5e0d3;
+    margin: 0;
+}
+nav {
+    position: sticky;
+    top: 0;
+    background: #f0eee4;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    z-index: 10;
+}
+nav a {
+    margin: 0 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05em;
+    color: #17110c;
+}
+section {
+    padding: 1em;
+}
+.entry {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #ddd5c8;
+    font-size: 1em;
+}
+h2 {
+    font-size: 1.2em;
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+    font-weight: bold;
+}
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body>
+  <h1 style="text-align: center; padding: 0.3em 0; font-size: 1.6em; background-color: #e5e0d3; margin: 0;">
+   SOMMELIER SELECTION UNDER $198
+  </h1>
+  <div style="text-align: right; padding: 0.3em 1em 0.1em 1em;">
+   <button aria-label="Search" onclick="toggleSearch()" style="background: none; border: none; font-size: 1.5em; cursor: pointer;">
+    🔍
+   </button>
+   <input id="searchInput" placeholder="Search a wine..." style="display:none; margin-top: 10px; padding: 10px; width: 80%; font-size: 1em; font-family: 'EB Garamond', serif; border: 1px solid #ccc; border-radius: 5px;" type="text"/>
+  </div>
+  <script>
+   function toggleSearch() {
+  var input = document.getElementById("searchInput");
+  input.style.display = input.style.display === "none" ? "block" : "none";
+  if (input.style.display === "block") input.focus();
+}
+document.getElementById("searchInput").addEventListener("input", function() {
+  var input = this.value.toLowerCase();
+  var entries = document.querySelectorAll(".entry");
+  var sections = document.querySelectorAll("section h2");
+  let found = 0;
+  entries.forEach(function(entry) {
+    if (entry.textContent.toLowerCase().includes(input)) {
+      entry.style.display = "block";
+      found++;
+    } else {
+      entry.style.display = "none";
+    }
+  });
+  sections.forEach(function(section) {
+    section.style.display = input.length > 0 ? "none" : "block";
+  });
+});
+  </script>
+  <nav>
+   <a href="#SPARKLING_WINES">
+    Sparkling Wines
+   </a>
+   <a href="#WHITE_WINES">
+    White Wines
+   </a>
+   <a href="#ROSÉ_&amp;_ORANGE_WINE">
+    Rosé &amp; Orange Wine
+   </a>
+   <a href="#RED_WINES">
+    Red Wines
+   </a>
+   <a href="#SWEET_WINES">
+    Sweet Wines
+   </a>
+  </nav>
+  <section id="SPARKLING_WINES">
+   <h2 style="margin-left: 110px; font-size: 1.2em; margin-top: 1em; padding-top: 1em; border-top: 1px solid #ccc; font-weight: bold;">
+    Sparkling Wines
+   </h2>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $58  Italy  Veneto,  NV Prosecco extra dry Botter
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $98  Italy  Lombardia,  NV  Franciacorta Alma Bellavista
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $118  South  Africa,  2011  Anna Luise Domaine Des Dieux
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $128  France,  NV  Pol Roger Brut
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $188  France,  NV Billecart Salmon Rosé
+   </div>
+  </section>
+  <section id="WHITE_WINES">
+   <h2 style="margin-left: 110px; font-size: 1.2em; margin-top: 1em; padding-top: 1em; border-top: 1px solid #ccc; font-weight: bold;">
+    White Wines
+   </h2>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $58  Italy  Veneto,  2023  Pinot Grigio Castele Reguta di Anselmi
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $68  Italy  Abruzzo,  2021  Cadetto Trebbiano Castorani
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $68  India  2016  Chenin Blanc
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $68  India,  2015  M/S White Chardonnay Sauvignon Fratelli
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $78  Italy  Lombardia,  2023  Lugana Montunal Montonale
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $88  Italy  Abruzzo,  2021  Trebbiano D'Abruzzo Riserva Castorani
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $98  Italy  Toscana,  2022  Chardonnay Capannelle
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $98  Italy  Puglia,  2023  Alice Verdeca Produttori di Manduria
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $108  Italy  Friuli,  2023  Sauvignon Blanc La Tunella
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $118  Italy  Piemonte,  2023  Timorasso Volpe
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $118  Italy  Lombardia,  2021  Lugana Orestilla Montonale
+   </div>
+  </section>
+  <section id="WHITE_WINES">
+   <h2 style="margin-left: 110px; font-size: 1.2em; margin-top: 1em; padding-top: 1em; border-top: 1px solid #ccc; font-weight: bold;">
+    White Wines
+   </h2>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $118  France,  2022  Chablis Louis Moreau
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $118  South  Africa,  2022  Chenin Kliprug Kaapziucht
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $128  Italy  Veneto,  2019  From Black to White Zyme
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $128  Italy  Trentino,  2021  Gewurztraminer Franz Haas
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $128  Italy  Toscana,  2023  Poggio Argentato Fattoria le Pupille
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $138  Italy  Umbria,  2023 Bramito della Sala Antinori
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $138  Italy  Veneto,  2020  Capitel Foscarino Anselmi
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $138  Italy  Trentino,  2021  Manna Franz Haas
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $148  Italy  Calabria,  2020  Val di Neto Efeso Librandi
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $148  South  Africa,  2015  Chardonnay Magliarina
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $178  Italy  Lombardia,  2013  Lugana Montunal Montonale
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $178  France,  2022  Chablis Joseph Drouhin
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $178  South  Africa,  2019  Hope Marguerite Beaumont
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $188  Italy  Lombardia,  2009  Lugana Montunal Montonale
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $188  Italy  Umbria,  2020  Cervaro della Sala Antinori
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $198  France,  2023  Pouilly-Fuisse Joseph Drouhin
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $198  South  Africa,   2018  Fynbos Single Vineyard Chardonnay Iona
+   </div>
+  </section>
+  <section id="ROSÉ_&amp;_ORANGE_WINE">
+   <h2 style="margin-left: 110px; font-size: 1.2em; margin-top: 1em; padding-top: 1em; border-top: 1px solid #ccc; font-weight: bold;">
+    Rosé &amp; Orange Wine
+   </h2>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $68  Italy  Puglia,  2021  Aka Primitivo Rosato Produttori di Manduria
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $98  Italy  Abruzzo,  2021  Amorino Cerasuolo D'Abruzzo Castorani
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $98  Italy  Abruzzo,  2021  Orange Wine Lupaia Castorani
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $118  Italy  Lombardia,  2021  Rosa di Notte Montonale
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $128  Italy  Toscana,  2020  Pa'ro Orange Buccia Nera
+   </div>
+  </section>
+  <section id="RED_WINES">
+   <h2 style="margin-left: 110px; font-size: 1.2em; margin-top: 1em; padding-top: 1em; border-top: 1px solid #ccc; font-weight: bold;">
+    Red Wines
+   </h2>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $68  Italy  Abruzzo,  2022  Cadetto Montepulciano Castorani
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $78  Italy  Piemonte,  2022  Dolcetto D'Alba Augenta Pelissero
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $78  Italy  Abruzzo,  2020  Lupaia Cabernet Castorani
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $88  Italy  Piemonte,  2021  Barbera Piani Pelissero
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $88  Italy  Abruzzo,  2020  Amorino Montepulciano Castorani
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $88  Italy  Toscana,  2018  Malvasia Nera Capannelle
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $98  Italy  Piemonte,  2022  Nebbiolo Langhe Pelissero
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $98  Italy  Toscana,  2021  Chianti Riserva Capannelle
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $98  India,  2015  M/S Red Fratelli
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $118  Italy  Toscana,  2018  Chianti Classico Gran Selezione Capannelle
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $118  South  Africa,  2020  Cabernet Sauvignon Rainbow's End
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $128  Italy  Piemonte,  2019  Long Now Pelissero
+   </div>
+  </section>
+  <section id="RED_WINES">
+   <h2 style="margin-left: 110px; font-size: 1.2em; margin-top: 1em; padding-top: 1em; border-top: 1px solid #ccc; font-weight: bold;">
+    Red Wines
+   </h2>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $128  Italy  Veneto,  2019  Campofiorin Masi
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $128  Italy  Abruzzo,  2017  Montepulciano Riserva Casauria Castorani
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $128  Italy  Puglia,  2020  Primitivo Elegia Riserva Produttori Di manduria
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $128  Chile  Bosque  2018  Carmenere Reserva Casas del Bosque
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $138  Italy  Trentino,  2021  Pinot Nero Franz Haas
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $138  Italy  Piemonte,  2020  Barbaresco Nubiola Pelissero
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $138  Australia,  2018  Pinot Noir Mount Riley
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $148  Italy  Trentino,  2016  Teroldego Detarczai
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $148  Italy  Trentino,  2018  Marzemino Detarczai
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $148  Greece,  2013  Kotsifali Lyrarakis
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $148  South Africa,  2018  Pinotage Beaumat
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $148  Australia,  2021  Tasmanian Pinot Noir Dalrymple
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $158  Italy  Toscana,  2019  Brunello di Montalcino La Gerla
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $158  South Aftrica,  2020  Family Reserve Rainbow's End
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $158  Australia,  2019  Samuel Collection Shiraz Yalumba
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $168  Italy  Piemonte,  2016  Barolo Castelletto Manzone
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $168  Italy  Lazio,  2014  Casanese di Olevano Romano Superiore Silene Ciolli
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $168  Greece,  2013  Syrah Kotsifali
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $168  South Aftrica,  2018  Shoilto Mitre's Edge
+   </div>
+  </section>
+  <section id="RED_WINES">
+   <h2 style="margin-left: 110px; font-size: 1.2em; margin-top: 1em; padding-top: 1em; border-top: 1px solid #ccc; font-weight: bold;">
+    Red Wines
+   </h2>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $178  Italy  Toscana,  2019  Torrione Petrolo
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $178  Italy  Calabria,  2015  Rosso Val di Neto Gravello Librandi
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $178  South Aftrica,  2019  The Mitre Mitre's Edge
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $188  Italy  Piemonte,  2020  Barbaresco Vanotu Pelissero
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $188  Italy  Veneto,  2019  Amarone Cavolo Brigaldara
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $188  Italy  Toscana,  2018  Chianti Classico Badia a Passignano Antinori
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $188  Italy  Umbria,  2012  Montefalco Sagrantino Colpetrone
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $188  France,  2019  Fleurie Coup d’Folie Les Bertrand
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $188  South Aftrica,  2020  Cabernet Franc Rainbow's End
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $198  Italy  Trentino,  2009  Granato Foradori
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $198  Italy  Piemonte,  2013  Barolo Gramolere Manzoni
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $198  Italy  Toscana,  2019  Brunello di Montalcino MastroJanni
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $198  South Africa,  2016  Oldenburg Vineyards
+   </div>
+  </section>
+  <section id="SWEET_WINES">
+   <h2 style="margin-left: 110px; font-size: 1.2em; margin-top: 1em; padding-top: 1em; border-top: 1px solid #ccc; font-weight: bold;">
+    Sweet Wines
+   </h2>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $58  Italy  Piemonte,  2023  Moscato d'Asto Pelissero
+   </div>
+   <div class="entry" style="margin-left: 110px; padding: 0.5em 0; border-bottom: 1px solid #ddd5c8; font-size: 1em;">
+    $98  Italy  Abruzzo,  NV  Jarno Passito Castorani
+   </div>
+  </section>
+ </body>
+</html>
