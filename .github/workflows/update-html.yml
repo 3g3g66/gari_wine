@@ -1,4 +1,4 @@
-name: Update HTML from Google Sheet
+name: Update HTML from Excel
 
 on:
   workflow_dispatch:
@@ -6,8 +6,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Set up Python
@@ -16,18 +17,17 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install pandas gspread oauth2client openpyxl
-
-      - name: Set GOOGLE_CREDENTIALS_JSON
-        run: echo '${{ secrets.GOOGLE_CREDENTIALS_JSON }}' > credentials.json
-
-      - name: Run HTML Generator
-        run: python generate_html.py
-
-      - name: Commit and push HTML
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          pip install pandas openpyxl
+
+      - name: Generate HTML from Excel
+        run: |
+          python generate_html.py
+
+      - name: Commit and push
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
           git add index.html
-          git commit -m "Auto-update HTML from Google Sheet"
+          git commit -m "Update wine list from Excel"
           git push
