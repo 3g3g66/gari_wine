@@ -2,80 +2,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sommelier Selection Garibaldi Restaurant</title>
-    <style>
-        body {
-            background-color: #f0eee4;
-            font-family: 'EB Garamond', 'Times New Roman', serif;
-            color: #17110c;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 0;
-        }
-        h2 {
-            text-align: center;
-            font-size: 1.5em;
-            margin-top: 0;
-        }
-        .search-box {
-            text-align: right;
-            margin-bottom: 20px;
-        }
-        .search-box input {
-            padding: 5px;
-            font-size: 1em;
-        }
-        .section {
-            margin-top: 40px;
-        }
-        .section-title {
-            font-size: 1.3em;
-            font-weight: bold;
-            border-bottom: 1px solid #17110c;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-        }
-        .wine {
-            margin: 5px 0;
-        }
-        .price {
-            font-weight: bold;
-            display: inline-block;
-            width: 50px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Sommelier Selection – Garibaldi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: "EB Garamond", serif;
+      background-color: #f0eee4;
+      color: #17110c;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    h2 {
+      font-size: 22px;
+      margin-top: 40px;
+      border-top: 1px solid #17110c;
+      padding-top: 10px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 6px 0;
+    }
+    strong {
+      font-weight: bold;
+    }
+    #searchInput {
+      float: right;
+      padding: 6px;
+      font-size: 14px;
+      margin-top: -30px;
+    }
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #17110c;
+    }
+  </style>
 </head>
 <body>
-    <h1>Sommelier Selection<br>Garibaldi Restaurant</h1>
-    <h2>Under $198</h2>
-
-    <div class="search-box">
-        <input type="text" id="search" placeholder="Search a wine..." onkeyup="searchWines()">
-    </div>
-
-    
-<div class="section">
-    <div class="section-title">Red Wines</div>
-    <div class="wine"><span class="price">$68</span> Italy Abruzzo 2022 Cadetto Montepulciano – Castorani</div>
-    <div class="wine"><span class="price">$78</span> Italy Piemonte 2022 Dolcetto D'Alba Augenta – Pelissero</div>
-</div>
-
-
-    <script>
-        function searchWines() {
-            var input = document.getElementById("search");
-            var filter = input.value.toLowerCase();
-            var wines = document.getElementsByClassName("wine");
-
-            for (var i = 0; i < wines.length; i++) {
-                var txtValue = wines[i].textContent || wines[i].innerText;
-                wines[i].style.display = txtValue.toLowerCase().includes(filter) ? "" : "none";
-            }
-        }
-    </script>
-</body>
-</html>
+<h1>Sommelier Selection<br>Garibaldi Restaurant<br>Under $198</h1>
+<input type="text" id="searchInput" onkeyup="filterWines()" placeholder="Search a wine...">
+<nav>
+<a href='#Sparkling_Wines'>Sparkling Wines</a><a href='#White_Wines'>White Wines</a><a href='#Rosé_&_Orange_Wine'>Rosé & Orange Wine</a><a href='#Red_Wines'>Red Wines</a><a href='#Sweet_Wines'>Sweet Wines</a></nav><h2 id='Sparkling_Wines'>Sparkling Wines</h2><ul><li><strong>$58</strong>&nbsp;&nbsp;Italy NV Prosecco extra dry – Botter</li><li><strong>$98</strong>&nbsp;&nbsp;Italy NV Franciacorta Alma – Bellavista</li><li><strong>$118</strong>&nbsp;&nbsp;South 2011 Anna Luise Domaine Des – Dieux</li><li><strong>$128</strong>&nbsp;&nbsp;France, Pol Roger – Brut</li><li><strong>$188</strong>&nbsp;&nbsp;France, Billecart Salmon – Rosé</li></ul><h2 id='White_Wines'>White Wines</h2><ul><li><strong>$58</strong>&nbsp;&nbsp;Italy 2023 Pinot Grigio Castele Reguta di – Anselmi</li><li><strong>$68</strong>&nbsp;&nbsp;Italy 2021 Cadetto Trebbiano – Castorani</li><li><strong>$68</strong>&nbsp;&nbsp;India Chenin Blanc – </li><li><strong>$68</strong>&nbsp;&nbsp;India, M/S White Chardonnay Sauvignon – Fratelli</li><li><strong>$78</strong>&nbsp;&nbsp;Italy 2023 Lugana Montunal – Montonale</li><li><strong>$88</strong>&nbsp;&nbsp;Italy 2021 Trebbiano D'Abruzzo Riserva – Castorani</li><li><strong>$98</strong>&nbsp;&nbsp;Italy 2022 Chardonnay – Capannelle</li><li><strong>$98</strong>&nbsp;&nbsp;Italy 2023 Alice Verdeca Produttori di – Manduria</li><li><strong>$108</strong>&nbsp;&nbsp;Italy 2023 Sauvignon Blanc La – Tunella</li><li><strong>$118</strong>&nbsp;&nbsp;Italy 2023 Timorasso – Volpe</li><li><strong>$118</strong>&nbsp;&nbsp;Italy 2021 Lugana Orestilla – Montonale</li><li><strong>$118</strong>&nbsp;&nbsp;France, Chablis Louis – Moreau</li><li><strong>$118</strong>&nbsp;&nbsp;South 2022 Chenin Kliprug – Kaapziucht</li><li><strong>$128</strong>&nbsp;&nbsp;Italy 2019 From Black to White – Zyme</li><li><strong>$128</strong>&nbsp;&nbsp;Italy 2021 Gewurztraminer Franz – Haas</li><li><strong>$128</strong>&nbsp;&nbsp;Italy 2023 Poggio Argentato Fattoria le – Pupille</li><li><strong>$138</strong>&nbsp;&nbsp;Italy 2023 Bramito della Sala – Antinori</li><li><strong>$138</strong>&nbsp;&nbsp;Italy 2020 Capitel Foscarino – Anselmi</li><li><strong>$138</strong>&nbsp;&nbsp;Italy 2021 Manna Franz – Haas</li><li><strong>$148</strong>&nbsp;&nbsp;Italy 2020 Val di Neto Efeso – Librandi</li><li><strong>$148</strong>&nbsp;&nbsp;South 2015 Chardonnay – Magliarina</li><li><strong>$178</strong>&nbsp;&nbsp;Italy 2013 Lugana Montunal – Montonale</li><li><strong>$178</strong>&nbsp;&nbsp;France, Chablis Joseph – Drouhin</li><li><strong>$178</strong>&nbsp;&nbsp;South 2019 Hope Marguerite – Beaumont</li><li><strong>$188</strong>&nbsp;&nbsp;Italy 2009 Lugana Montunal – Montonale</li><li><strong>$188</strong>&nbsp;&nbsp;Italy 2020 Cervaro della Sala – Antinori</li><li><strong>$198</strong>&nbsp;&nbsp;France, Pouilly-Fuisse Joseph – Drouhin</li><li><strong>$198</strong>&nbsp;&nbsp;South 2018 Fynbos Single Vineyard Chardonnay – Iona</li></ul><h2 id='Rosé_&_Orange_Wine'>Rosé & Orange Wine</h2><ul><li><strong>$68</strong>&nbsp;&nbsp;Italy 2021 Aka Primitivo Rosato Produttori di – Manduria</li><li><strong>$98</strong>&nbsp;&nbsp;Italy 2021 Amorino Cerasuolo D'Abruzzo – Castorani</li><li><strong>$98</strong>&nbsp;&nbsp;Italy 2021 Orange Wine Lupaia – Castorani</li><li><strong>$118</strong>&nbsp;&nbsp;Italy 2021 Rosa di Notte – Montonale</li><li><strong>$128</strong>&nbsp;&nbsp;Italy 2020 Pa'ro Orange Buccia – Nera</li></ul><h2 id='Red_Wines'>Red Wines</h2><ul><li><strong>$68</strong>&nbsp;&nbsp;Italy 2022 Cadetto Montepulciano – Castorani</li><li><strong>$78</strong>&nbsp;&nbsp;Italy 2022 Dolcetto D'Alba Augenta – Pelissero</li><li><strong>$78</strong>&nbsp;&nbsp;Italy 2020 Lupaia Cabernet – Castorani</li><li><strong>$88</strong>&nbsp;&nbsp;Italy 2021 Barbera Piani – Pelissero</li><li><strong>$88</strong>&nbsp;&nbsp;Italy 2020 Amorino Montepulciano – Castorani</li><li><strong>$88</strong>&nbsp;&nbsp;Italy 2018 Malvasia Nera – Capannelle</li><li><strong>$98</strong>&nbsp;&nbsp;Italy 2022 Nebbiolo Langhe – Pelissero</li><li><strong>$98</strong>&nbsp;&nbsp;Italy 2021 Chianti Riserva – Capannelle</li><li><strong>$98</strong>&nbsp;&nbsp;India, M/S Red – Fratelli</li><li><strong>$118</strong>&nbsp;&nbsp;Italy 2018 Chianti Classico Gran Selezione – Capannelle</li><li><strong>$118</strong>&nbsp;&nbsp;South 2020 Cabernet Sauvignon Rainbow's – End</li><li><strong>$128</strong>&nbsp;&nbsp;Italy 2019 Long Now – Pelissero</li><li><strong>$128</strong>&nbsp;&nbsp;Italy 2019 Campofiorin – Masi</li><li><strong>$128</strong>&nbsp;&nbsp;Italy 2017 Montepulciano Riserva Casauria – Castorani</li><li><strong>$128</strong>&nbsp;&nbsp;Italy 2020 Primitivo Elegia Riserva Produttori Di – manduria</li><li><strong>$128</strong>&nbsp;&nbsp;Chile 2018 Carmenere Reserva Casas del – Bosque</li><li><strong>$138</strong>&nbsp;&nbsp;Italy 2021 Pinot Nero Franz – Haas</li><li><strong>$138</strong>&nbsp;&nbsp;Italy 2020 Barbaresco Nubiola – Pelissero</li><li><strong>$138</strong>&nbsp;&nbsp;Australia, Pinot Noir Mount – Riley</li><li><strong>$148</strong>&nbsp;&nbsp;Italy 2016 Teroldego – Detarczai</li><li><strong>$148</strong>&nbsp;&nbsp;Italy 2018 Marzemino – Detarczai</li><li><strong>$148</strong>&nbsp;&nbsp;Greece, Kotsifali Lyrarakis – </li><li><strong>$148</strong>&nbsp;&nbsp;South 2018 Pinotage – Beaumat</li><li><strong>$148</strong>&nbsp;&nbsp;Australia, Tasmanian Pinot Noir – Dalrymple</li><li><strong>$158</strong>&nbsp;&nbsp;Italy 2019 Brunello di Montalcino La – Gerla</li><li><strong>$158</strong>&nbsp;&nbsp;South 2020 Family Reserve Rainbow's – End</li><li><strong>$158</strong>&nbsp;&nbsp;Australia, Samuel Collection Shiraz – Yalumba</li><li><strong>$168</strong>&nbsp;&nbsp;Italy 2016 Barolo Castelletto – Manzone</li><li><strong>$168</strong>&nbsp;&nbsp;Italy 2014 Casanese di Olevano Romano Superiore Silene – Ciolli</li><li><strong>$168</strong>&nbsp;&nbsp;Greece, Syrah Kotsifali – </li><li><strong>$168</strong>&nbsp;&nbsp;South 2018 Shoilto Mitre's – Edge</li><li><strong>$178</strong>&nbsp;&nbsp;Italy 2019 Torrione – Petrolo</li><li><strong>$178</strong>&nbsp;&nbsp;Italy 2015 Rosso Val di Neto Gravello – Librandi</li><li><strong>$178</strong>&nbsp;&nbsp;South 2019 The Mitre Mitre's – Edge</li><li><strong>$188</strong>&nbsp;&nbsp;Italy 2020 Barbaresco Vanotu – Pelissero</li><li><strong>$188</strong>&nbsp;&nbsp;Italy 2019 Amarone Cavolo – Brigaldara</li><li><strong>$188</strong>&nbsp;&nbsp;Italy 2018 Chianti Classico Badia a Passignano – Antinori</li><li><strong>$188</strong>&nbsp;&nbsp;Italy 2012 Montefalco Sagrantino – Colpetrone</li><li><strong>$188</strong>&nbsp;&nbsp;France, Fleurie Coup d’Folie Les – Bertrand</li><li><strong>$188</strong>&nbsp;&nbsp;South 2020 Cabernet Franc Rainbow's – End</li><li><strong>$198</strong>&nbsp;&nbsp;Italy 2009 Granato – Foradori</li><li><strong>$198</strong>&nbsp;&nbsp;Italy 2013 Barolo Gramolere – Manzoni</li><li><strong>$198</strong>&nbsp;&nbsp;Italy 2019 Brunello di Montalcino – MastroJanni</li><li><strong>$198</strong>&nbsp;&nbsp;South 2016 Oldenburg – Vineyards</li></ul><h2 id='Sweet_Wines'>Sweet Wines</h2><ul><li><strong>$58</strong>&nbsp;&nbsp;Italy 2023 Moscato d'Asto – Pelissero</li><li><strong>$98</strong>&nbsp;&nbsp;Italy NV Jarno Passito – Castorani</li></ul>
+<script>
+function filterWines() {
+  let input = document.getElementById("searchInput");
+  let filter = input.value.toLowerCase();
+  let lis = document.querySelectorAll("li");
+  lis.forEach(li => {
+    let text = li.textContent.toLowerCase();
+    li.style.display = text.includes(filter) ? "" : "none";
+  });
+}
+</script>
+</body></html>
