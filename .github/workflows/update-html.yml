@@ -18,7 +18,12 @@ jobs:
       - name: Install dependencies
         run: pip install pandas gspread oauth2client
 
+      - name: Set GOOGLE_CREDENTIALS_JSON
+        run: echo "${{ secrets.GOOGLE_CREDENTIALS_JSON }}" > creds.json
+
       - name: Run HTML Generator
+        env:
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
         run: python generate_html.py
 
       - name: Commit and push HTML
