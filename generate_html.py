@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_excel("Sommelier_Selection_Garibaldi_Optimized.xlsx")
+df = pd.read_excel("Sommelier_Selection_Garibaldi_Optimized")
 
 grouped = df.groupby("Sezione")
 
