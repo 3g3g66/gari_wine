@@ -1,0 +1,83 @@
+with open("index.html", "w") as f:
+    f.write("""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sommelier Selection Garibaldi Restaurant</title>
+    <style>
+        body {
+            background-color: #f0eee4;
+            font-family: 'EB Garamond', 'Times New Roman', serif;
+            color: #17110c;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 0;
+        }
+        h2 {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        .search-box {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            padding: 5px;
+            font-size: 1em;
+        }
+        .section {
+            margin-top: 40px;
+        }
+        .section-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            border-bottom: 1px solid #17110c;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .wine {
+            margin: 5px 0;
+        }
+        .price {
+            font-weight: bold;
+            display: inline-block;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sommelier Selection<br>Garibaldi Restaurant</h1>
+    <h2>Under $198</h2>
+
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search a wine..." onkeyup="searchWines()">
+    </div>
+
+    
+<div class="section">
+    <div class="section-title">Red Wines</div>
+    <div class="wine"><span class="price">$68</span> Italy Abruzzo 2022 Cadetto Montepulciano – Castorani</div>
+    <div class="wine"><span class="price">$78</span> Italy Piemonte 2022 Dolcetto D'Alba Augenta – Pelissero</div>
+</div>
+
+
+    <script>
+        function searchWines() {
+            var input = document.getElementById("search");
+            var filter = input.value.toLowerCase();
+            var wines = document.getElementsByClassName("wine");
+
+            for (var i = 0; i < wines.length; i++) {
+                var txtValue = wines[i].textContent || wines[i].innerText;
+                wines[i].style.display = txtValue.toLowerCase().includes(filter) ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
+""")
