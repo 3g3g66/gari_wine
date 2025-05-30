@@ -1,4 +1,68 @@
 <!DOCTYPE html>
-<!-- QUI INIZIA IL LAYOUT STILE IPAD ORIGINALE, DA SOSTITUIRE NEL PASSAGGIO SUCCESSIVO -->
-<!-- Contenuto dinamico qui -->
-</body></html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Sommelier Selection $198 - Garibaldi</title>
+  <style>
+    body {
+      font-family: 'EB Garamond', serif;
+      background-color: #f0eee4;
+      color: #17110c;
+      padding: 30px;
+      font-size: 18px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 40px;
+      font-weight: bold;
+      font-size: 22px;
+      border-bottom: 1px solid #17110c;
+      padding-bottom: 6px;
+    }
+    .wine-entry {
+      margin: 4px 0;
+      padding-left: 40px;
+    }
+    .price {
+      font-weight: bold;
+      display: inline-block;
+      width: 70px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .search {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+    }
+    #searchInput {
+      padding: 6px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+<div class='search'>
+  <input type='text' id='searchInput' placeholder='Search a wine...' onkeyup='filterWines()'>
+</div>
+<h1>Sommelier Selection<br>Garibaldi Restaurant<br>Under $198</h1>
+<script>
+function filterWines() {
+  var input, filter, entries, entry, i, txtValue;
+  input = document.getElementById('searchInput');
+  filter = input.value.toUpperCase();
+  entries = document.getElementsByClassName('wine-entry');
+  for (i = 0; i < entries.length; i++) {
+    entry = entries[i];
+    txtValue = entry.textContent || entry.innerText;
+    entry.style.display = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+  }
+}
+</script>
+<div class='section'><h2>Red Wines</h2><div class='wine-entry'><span class='price'>$68</span>Italy Abruzzo 2022 Cadetto Montepulciano – Castorani</div><div class='wine-entry'><span class='price'>$78</span>Italy Piemonte 2022 Dolcetto D'Alba Augenta – Pelissero</div><div class='wine-entry'><span class='price'>$78</span>Italy Abruzzo 2020 Lupaia Cabernet – Castorani</div><div class='wine-entry'><span class='price'>$88</span>Italy Piemonte 2021 Barbera Piani – Pelissero</div><div class='wine-entry'><span class='price'>$88</span>Italy Abruzzo 2020 Amorino Montepulciano – Castorani</div><div class='wine-entry'><span class='price'>$88</span>Italy Toscana 2018 Malvasia Nera – Capannelle</div><div class='wine-entry'><span class='price'>$98</span>Italy Piemonte 2022 Nebbiolo Langhe – Pelissero</div><div class='wine-entry'><span class='price'>$98</span>Italy Toscana 2021 Chianti Riserva – Capannelle</div><div class='wine-entry'><span class='price'>$98</span>India, 2015 M/S Red – Fratelli</div><div class='wine-entry'><span class='price'>$118</span>Italy Toscana 2018 Chianti Classico Gran Selezione – Capannelle</div><div class='wine-entry'><span class='price'>$118</span>South Africa 2020 Cabernet Sauvignon Rainbow's – End</div><div class='wine-entry'><span class='price'>$128</span>Italy Piemonte 2019 Long Now – Pelissero</div><div class='wine-entry'><span class='price'>$128</span>Italy Veneto 2019 Campofiorin – Masi</div><div class='wine-entry'><span class='price'>$128</span>Italy Abruzzo 2017 Montepulciano Riserva Casauria – Castorani</div><div class='wine-entry'><span class='price'>$128</span>Italy Puglia 2020 Primitivo Elegia Riserva Produttori Di – manduria</div><div class='wine-entry'><span class='price'>$128</span>Chile Bosque 2018 Carmenere Reserva Casas del – Bosque</div><div class='wine-entry'><span class='price'>$138</span>Italy Trentino 2021 Pinot Nero Franz – Haas</div><div class='wine-entry'><span class='price'>$138</span>Italy Piemonte 2020 Barbaresco Nubiola – Pelissero</div><div class='wine-entry'><span class='price'>$138</span>Australia, 2018 Pinot Noir Mount – Riley</div><div class='wine-entry'><span class='price'>$148</span>Italy Trentino 2016 Teroldego – Detarczai</div><div class='wine-entry'><span class='price'>$148</span>Italy Trentino 2018 Marzemino – Detarczai</div><div class='wine-entry'><span class='price'>$148</span>Greece, 2013 Kotsifali Lyrarakis – </div><div class='wine-entry'><span class='price'>$148</span>South Africa 2018 Pinotage – Beaumat</div><div class='wine-entry'><span class='price'>$148</span>Australia, 2021 Tasmanian Pinot Noir – Dalrymple</div><div class='wine-entry'><span class='price'>$158</span>Italy Toscana 2019 Brunello di Montalcino La – Gerla</div><div class='wine-entry'><span class='price'>$158</span>South Aftrica 2020 Family Reserve Rainbow's – End</div><div class='wine-entry'><span class='price'>$158</span>Australia, 2019 Samuel Collection Shiraz – Yalumba</div><div class='wine-entry'><span class='price'>$168</span>Italy Piemonte 2016 Barolo Castelletto – Manzone</div><div class='wine-entry'><span class='price'>$168</span>Italy Lazio 2014 Casanese di Olevano Romano Superiore Silene – Ciolli</div><div class='wine-entry'><span class='price'>$168</span>Greece, 2013 Syrah Kotsifali – </div><div class='wine-entry'><span class='price'>$168</span>South Aftrica 2018 Shoilto Mitre's – Edge</div><div class='wine-entry'><span class='price'>$178</span>Italy Toscana 2019 Torrione – Petrolo</div><div class='wine-entry'><span class='price'>$178</span>Italy Calabria 2015 Rosso Val di Neto Gravello – Librandi</div><div class='wine-entry'><span class='price'>$178</span>South Aftrica 2019 The Mitre Mitre's – Edge</div><div class='wine-entry'><span class='price'>$188</span>Italy Piemonte 2020 Barbaresco Vanotu – Pelissero</div><div class='wine-entry'><span class='price'>$188</span>Italy Veneto 2019 Amarone Cavolo – Brigaldara</div><div class='wine-entry'><span class='price'>$188</span>Italy Toscana 2018 Chianti Classico Badia a Passignano – Antinori</div><div class='wine-entry'><span class='price'>$188</span>Italy Umbria 2012 Montefalco Sagrantino – Colpetrone</div><div class='wine-entry'><span class='price'>$188</span>France, 2019 Fleurie Coup d’Folie Les – Bertrand</div><div class='wine-entry'><span class='price'>$188</span>South Aftrica 2020 Cabernet Franc Rainbow's – End</div><div class='wine-entry'><span class='price'>$198</span>Italy Trentino 2009 Granato – Foradori</div><div class='wine-entry'><span class='price'>$198</span>Italy Piemonte 2013 Barolo Gramolere – Manzoni</div><div class='wine-entry'><span class='price'>$198</span>Italy Toscana 2019 Brunello di Montalcino – MastroJanni</div><div class='wine-entry'><span class='price'>$198</span>South Africa 2016 Oldenburg – Vineyards</div></div><div class='section'><h2>Rosé & Orange Wine</h2><div class='wine-entry'><span class='price'>$68</span>Italy Puglia 2021 Aka Primitivo Rosato Produttori di – Manduria</div><div class='wine-entry'><span class='price'>$98</span>Italy Abruzzo 2021 Amorino Cerasuolo D'Abruzzo – Castorani</div><div class='wine-entry'><span class='price'>$98</span>Italy Abruzzo 2021 Orange Wine Lupaia – Castorani</div><div class='wine-entry'><span class='price'>$118</span>Italy Lombardia 2021 Rosa di Notte – Montonale</div><div class='wine-entry'><span class='price'>$128</span>Italy Toscana 2020 Pa'ro Orange Buccia – Nera</div></div><div class='section'><h2>Sparkling Wines</h2><div class='wine-entry'><span class='price'>$1000</span>Italy Veneto NV Prosecco extra dry – Botter</div><div class='wine-entry'><span class='price'>$98</span>Italy Lombardia NV Franciacorta Alma – Bellavista</div><div class='wine-entry'><span class='price'>$118</span>South Africa 2011 Anna Luise Domaine Des – Dieux</div><div class='wine-entry'><span class='price'>$128</span>France, NV Pol Roger – Brut</div><div class='wine-entry'><span class='price'>$188</span>France, NV Billecart Salmon – Rosé</div></div><div class='section'><h2>Sweet Wines</h2><div class='wine-entry'><span class='price'>$58</span>Italy Piemonte 2023 Moscato d'Asto – Pelissero</div><div class='wine-entry'><span class='price'>$98</span>Italy Abruzzo NV Jarno Passito – Castorani</div></div><div class='section'><h2>White Wines</h2><div class='wine-entry'><span class='price'>$58</span>Italy Veneto 2023 Pinot Grigio Castele Reguta di – Anselmi</div><div class='wine-entry'><span class='price'>$68</span>Italy Abruzzo 2021 Cadetto Trebbiano – Castorani</div><div class='wine-entry'><span class='price'>$68</span>India 2016 Chenin Blanc – </div><div class='wine-entry'><span class='price'>$68</span>India, 2015 M/S White Chardonnay Sauvignon – Fratelli</div><div class='wine-entry'><span class='price'>$78</span>Italy Lombardia 2023 Lugana Montunal – Montonale</div><div class='wine-entry'><span class='price'>$88</span>Italy Abruzzo 2021 Trebbiano D'Abruzzo Riserva – Castorani</div><div class='wine-entry'><span class='price'>$98</span>Italy Toscana 2022 Chardonnay – Capannelle</div><div class='wine-entry'><span class='price'>$98</span>Italy Puglia 2023 Alice Verdeca Produttori di – Manduria</div><div class='wine-entry'><span class='price'>$108</span>Italy Friuli 2023 Sauvignon Blanc La – Tunella</div><div class='wine-entry'><span class='price'>$118</span>Italy Piemonte 2023 Timorasso – Volpe</div><div class='wine-entry'><span class='price'>$118</span>Italy Lombardia 2021 Lugana Orestilla – Montonale</div><div class='wine-entry'><span class='price'>$118</span>France, 2022 Chablis Louis – Moreau</div><div class='wine-entry'><span class='price'>$118</span>South Africa 2022 Chenin Kliprug – Kaapziucht</div><div class='wine-entry'><span class='price'>$128</span>Italy Veneto 2019 From Black to White – Zyme</div><div class='wine-entry'><span class='price'>$128</span>Italy Trentino 2021 Gewurztraminer Franz – Haas</div><div class='wine-entry'><span class='price'>$128</span>Italy Toscana 2023 Poggio Argentato Fattoria le – Pupille</div><div class='wine-entry'><span class='price'>$138</span>Italy Umbria 2023 Bramito della Sala – Antinori</div><div class='wine-entry'><span class='price'>$138</span>Italy Veneto 2020 Capitel Foscarino – Anselmi</div><div class='wine-entry'><span class='price'>$138</span>Italy Trentino 2021 Manna Franz – Haas</div><div class='wine-entry'><span class='price'>$148</span>Italy Calabria 2020 Val di Neto Efeso – Librandi</div><div class='wine-entry'><span class='price'>$148</span>South Africa 2015 Chardonnay – Magliarina</div><div class='wine-entry'><span class='price'>$178</span>Italy Lombardia 2013 Lugana Montunal – Montonale</div><div class='wine-entry'><span class='price'>$178</span>France, 2022 Chablis Joseph – Drouhin</div><div class='wine-entry'><span class='price'>$178</span>South Africa 2019 Hope Marguerite – Beaumont</div><div class='wine-entry'><span class='price'>$188</span>Italy Lombardia 2009 Lugana Montunal – Montonale</div><div class='wine-entry'><span class='price'>$188</span>Italy Umbria 2020 Cervaro della Sala – Antinori</div><div class='wine-entry'><span class='price'>$198</span>France, 2023 Pouilly-Fuisse Joseph – Drouhin</div><div class='wine-entry'><span class='price'>$198</span>South Africa 2018 Fynbos Single Vineyard Chardonnay – Iona</div></div></body></html>
