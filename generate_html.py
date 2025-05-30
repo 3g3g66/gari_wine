@@ -2,7 +2,6 @@ import pandas as pd
 
 df = pd.read_excel("Sommelier_Selection_Garibaldi_Optimized.xlsx")
 
-
 grouped = df.groupby("Sezione")
 
 html = """<!DOCTYPE html>
