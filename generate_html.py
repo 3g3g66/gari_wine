@@ -124,12 +124,17 @@ sections = defaultdict(list)
 for row in data[1:]:  # salta intestazione
     if len(row) < 4:
         continue
-    category = row[0].strip().upper().replace(" ", "_").replace("&", "AND")
-    price = row[1].strip()       # B → Prezzo
-    wine = row[5].strip()        # F → Nome del Vino
-    producer = row[6].strip()    # G → Produttore
+    category = row[0].strip().upper().replace(" ", "_").replace("&", "AND")  # A
+    price = row[1].strip()     # B – Prezzo
+    nation = row[2].strip()    # C – Nazione
+    region = row[3].strip()    # D – Regione
+    wine = row[5].strip()      # F – Nome del Vino
+    producer = row[6].strip()  # G – Produttore
 
-    sections[category].append(f"<div class='entry'>${price} {wine} – {producer}</div>")
+    sections[category].append(
+    f"<div class='entry'>${price} {nation} – {region}, {wine} – {producer}</div>"
+)
+
 
 for section_id, entries in sections.items():
     html += f'<section id="{section_id}">\n'
