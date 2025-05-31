@@ -23,8 +23,10 @@ jobs:
           GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
         run: echo "Secret loaded."
 
-      - name: Generate HTML from Excel
-        run: python generate_html.py
+     - name: Generate HTML from Excel
+       run: python generate_html.py
+       env:
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
 
       - name: Commit and push
         run: |
