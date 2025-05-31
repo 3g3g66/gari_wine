@@ -112,7 +112,7 @@ for section, anchor in section_anchors.items():
         entry = f"{row['Nazione']}, {row['Regione']}, {row['Annata']} {row['Nome']}"
         html += f'<div class="entry">{price}  {entry}</div>
 '
-    html += "</section>
+    html += "</section>"
 "
 
 html += "</body></html>"
