@@ -132,7 +132,7 @@ for row in data[1:]:  # salta intestazione
     wine = row[5].strip()      # F – Nome del Vino
     producer = row[6].strip()  # G – Produttore
 
-    sections[category].append(f"<div class='entry'>${price} {nation} – {region}, {year} {wine} – {producer}</div>")
+    sections[category].append(f"<div class='entry'><strong>${price}</strong> {nation} – {region}, {year} {wine} – {producer}</div>")
 
 for section_id, entries in sections.items():
     html += f'<section id="{section_id}">\n'
