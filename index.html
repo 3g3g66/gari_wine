@@ -1,75 +1,175 @@
-<!DOCTYPE html>
-<html lang='en'>
+
+<html>
 <head>
-  <meta charset='UTF-8'>
-  <title>Sommelier Selection Garibaldi</title>
-  <style>
-    body {
-      background-color: #f0eee4;
-      font-family: 'EB Garamond', serif;
-      color: #17110c;
-      margin: 40px;
-    }
-    h1, h2, h3 {
-      text-align: center;
-      margin: 0;
-    }
-    h1 { font-size: 32px; }
-    h2 { font-size: 28px; margin-top: 50px; border-top: 1px solid #17110c; padding-top: 20px; }
-    h3 { font-size: 18px; margin-bottom: 40px; }
-    .wine-entry {
-      display: flex;
-      padding: 2px 0;
-    }
-    .price {
-      width: 70px;
-      font-weight: bold;
-    }
-    .text {
-      flex: 1;
-    }
-    #search-box {
-      float: right;
-      margin-top: -30px;
-    }
-    input[type='text'] {
-      padding: 6px;
-      font-size: 16px;
-    }
-    .category-link {
-      margin-right: 25px;
-    }
-    .nav {
-      text-align: center;
-      margin: 20px 0;
-    }
-  </style>
+<meta charset='utf-8'/>
+<title>Wine List</title>
+<style>
+body {
+    font-family: 'EB Garamond', serif;
+    background-color: #f0eee4;
+    color: #17110c;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+    padding: 1em;
+    font-size: 1.6em;
+    background-color: #e5e0d3;
+    margin: 0;
+}
+nav {
+    position: sticky;
+    top: 0;
+    background: #f0eee4;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    z-index: 10;
+}
+nav a {
+    margin: 0 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05em;
+    color: #17110c;
+}
+section {
+    padding: 1em;
+}
+.entry {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #ddd5c8;
+    font-size: 1em;
+}
+h2 {
+    font-size: 1.2em;
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+    font-weight: bold;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet"/>
 </head>
 <body>
-  <h1>Sommelier Selection<br>Garibaldi Restaurant</h1>
-  <h3>Under $198</h3>
-
-  <div id='search-box'>
-    <input type='text' id='searchInput' onkeyup='searchWines()' placeholder='Search a wine...'>
-  </div>
-
-  <div class='nav'>
-<a class='category-link' href='#SparklingWines'>Sparkling Wines</a>
-<a class='category-link' href='#WhiteWines'>White Wines</a>
-<a class='category-link' href='#RoseOrangeWine'>Rosé & Orange Wine</a>
-<a class='category-link' href='#RedWines'>Red Wines</a>
-<a class='category-link' href='#SweetWines'>Sweet Wines</a>
-</div><h2 id='SparklingWines'>Sparkling Wines</h2><div class='wine-entry'><div class='price'>$58</div><div class='text'>Italy NV Prosecco extra dry – Botter</div></div><div class='wine-entry'><div class='price'>$98</div><div class='text'>Italy NV Franciacorta Alma – Bellavista</div></div><div class='wine-entry'><div class='price'>$118</div><div class='text'>South 2011 Anna Luise Domaine Des – Dieux</div></div><div class='wine-entry'><div class='price'>$128</div><div class='text'>France, Pol Roger – Brut</div></div><div class='wine-entry'><div class='price'>$188</div><div class='text'>France, Billecart Salmon – Rosé</div></div><h2 id='WhiteWines'>White Wines</h2><div class='wine-entry'><div class='price'>$58</div><div class='text'>Italy 2023 Pinot Grigio Castele Reguta di – Anselmi</div></div><div class='wine-entry'><div class='price'>$68</div><div class='text'>Italy 2021 Cadetto Trebbiano – Castorani</div></div><div class='wine-entry'><div class='price'>$68</div><div class='text'>India Chenin Blanc – nan</div></div><div class='wine-entry'><div class='price'>$68</div><div class='text'>India, M/S White Chardonnay Sauvignon – Fratelli</div></div><div class='wine-entry'><div class='price'>$78</div><div class='text'>Italy 2023 Lugana Montunal – Montonale</div></div><div class='wine-entry'><div class='price'>$88</div><div class='text'>Italy 2021 Trebbiano D'Abruzzo Riserva – Castorani</div></div><div class='wine-entry'><div class='price'>$98</div><div class='text'>Italy 2022 Chardonnay – Capannelle</div></div><div class='wine-entry'><div class='price'>$98</div><div class='text'>Italy 2023 Alice Verdeca Produttori di – Manduria</div></div><div class='wine-entry'><div class='price'>$108</div><div class='text'>Italy 2023 Sauvignon Blanc La – Tunella</div></div><div class='wine-entry'><div class='price'>$118</div><div class='text'>Italy 2023 Timorasso – Volpe</div></div><div class='wine-entry'><div class='price'>$118</div><div class='text'>Italy 2021 Lugana Orestilla – Montonale</div></div><div class='wine-entry'><div class='price'>$118</div><div class='text'>France, Chablis Louis – Moreau</div></div><div class='wine-entry'><div class='price'>$118</div><div class='text'>South 2022 Chenin Kliprug – Kaapziucht</div></div><div class='wine-entry'><div class='price'>$128</div><div class='text'>Italy 2019 From Black to White – Zyme</div></div><div class='wine-entry'><div class='price'>$128</div><div class='text'>Italy 2021 Gewurztraminer Franz – Haas</div></div><div class='wine-entry'><div class='price'>$128</div><div class='text'>Italy 2023 Poggio Argentato Fattoria le – Pupille</div></div><div class='wine-entry'><div class='price'>$138</div><div class='text'>Italy 2023 Bramito della Sala – Antinori</div></div><div class='wine-entry'><div class='price'>$138</div><div class='text'>Italy 2020 Capitel Foscarino – Anselmi</div></div><div class='wine-entry'><div class='price'>$138</div><div class='text'>Italy 2021 Manna Franz – Haas</div></div><div class='wine-entry'><div class='price'>$148</div><div class='text'>Italy 2020 Val di Neto Efeso – Librandi</div></div><div class='wine-entry'><div class='price'>$148</div><div class='text'>South 2015 Chardonnay – Magliarina</div></div><div class='wine-entry'><div class='price'>$178</div><div class='text'>Italy 2013 Lugana Montunal – Montonale</div></div><div class='wine-entry'><div class='price'>$178</div><div class='text'>France, Chablis Joseph – Drouhin</div></div><div class='wine-entry'><div class='price'>$178</div><div class='text'>South 2019 Hope Marguerite – Beaumont</div></div><div class='wine-entry'><div class='price'>$188</div><div class='text'>Italy 2009 Lugana Montunal – Montonale</div></div><div class='wine-entry'><div class='price'>$188</div><div class='text'>Italy 2020 Cervaro della Sala – Antinori</div></div><div class='wine-entry'><div class='price'>$198</div><div class='text'>France, Pouilly-Fuisse Joseph – Drouhin</div></div><div class='wine-entry'><div class='price'>$198</div><div class='text'>South 2018 Fynbos Single Vineyard Chardonnay – Iona</div></div><h2 id='RoseOrangeWine'>Rosé & Orange Wine</h2><div class='wine-entry'><div class='price'>$68</div><div class='text'>Italy 2021 Aka Primitivo Rosato Produttori di – Manduria</div></div><div class='wine-entry'><div class='price'>$98</div><div class='text'>Italy 2021 Amorino Cerasuolo D'Abruzzo – Castorani</div></div><div class='wine-entry'><div class='price'>$98</div><div class='text'>Italy 2021 Orange Wine Lupaia – Castorani</div></div><div class='wine-entry'><div class='price'>$118</div><div class='text'>Italy 2021 Rosa di Notte – Montonale</div></div><div class='wine-entry'><div class='price'>$128</div><div class='text'>Italy 2020 Pa'ro Orange Buccia – Nera</div></div><h2 id='RedWines'>Red Wines</h2><div class='wine-entry'><div class='price'>$68</div><div class='text'>Italy 2022 Cadetto Montepulciano – Castorani</div></div><div class='wine-entry'><div class='price'>$78</div><div class='text'>Italy 2022 Dolcetto D'Alba Augenta – Pelissero</div></div><div class='wine-entry'><div class='price'>$78</div><div class='text'>Italy 2020 Lupaia Cabernet – Castorani</div></div><div class='wine-entry'><div class='price'>$88</div><div class='text'>Italy 2021 Barbera Piani – Pelissero</div></div><div class='wine-entry'><div class='price'>$88</div><div class='text'>Italy 2020 Amorino Montepulciano – Castorani</div></div><div class='wine-entry'><div class='price'>$88</div><div class='text'>Italy 2018 Malvasia Nera – Capannelle</div></div><div class='wine-entry'><div class='price'>$98</div><div class='text'>Italy 2022 Nebbiolo Langhe – Pelissero</div></div><div class='wine-entry'><div class='price'>$98</div><div class='text'>Italy 2021 Chianti Riserva – Capannelle</div></div><div class='wine-entry'><div class='price'>$98</div><div class='text'>India, M/S Red – Fratelli</div></div><div class='wine-entry'><div class='price'>$118</div><div class='text'>Italy 2018 Chianti Classico Gran Selezione – Capannelle</div></div><div class='wine-entry'><div class='price'>$118</div><div class='text'>South 2020 Cabernet Sauvignon Rainbow's – End</div></div><div class='wine-entry'><div class='price'>$128</div><div class='text'>Italy 2019 Long Now – Pelissero</div></div><div class='wine-entry'><div class='price'>$128</div><div class='text'>Italy 2019 Campofiorin – Masi</div></div><div class='wine-entry'><div class='price'>$128</div><div class='text'>Italy 2017 Montepulciano Riserva Casauria – Castorani</div></div><div class='wine-entry'><div class='price'>$128</div><div class='text'>Italy 2020 Primitivo Elegia Riserva Produttori Di – manduria</div></div><div class='wine-entry'><div class='price'>$128</div><div class='text'>Chile 2018 Carmenere Reserva Casas del – Bosque</div></div><div class='wine-entry'><div class='price'>$138</div><div class='text'>Italy 2021 Pinot Nero Franz – Haas</div></div><div class='wine-entry'><div class='price'>$138</div><div class='text'>Italy 2020 Barbaresco Nubiola – Pelissero</div></div><div class='wine-entry'><div class='price'>$138</div><div class='text'>Australia, Pinot Noir Mount – Riley</div></div><div class='wine-entry'><div class='price'>$148</div><div class='text'>Italy 2016 Teroldego – Detarczai</div></div><div class='wine-entry'><div class='price'>$148</div><div class='text'>Italy 2018 Marzemino – Detarczai</div></div><div class='wine-entry'><div class='price'>$148</div><div class='text'>Greece, Kotsifali Lyrarakis – nan</div></div><div class='wine-entry'><div class='price'>$148</div><div class='text'>South 2018 Pinotage – Beaumat</div></div><div class='wine-entry'><div class='price'>$148</div><div class='text'>Australia, Tasmanian Pinot Noir – Dalrymple</div></div><div class='wine-entry'><div class='price'>$158</div><div class='text'>Italy 2019 Brunello di Montalcino La – Gerla</div></div><div class='wine-entry'><div class='price'>$158</div><div class='text'>South 2020 Family Reserve Rainbow's – End</div></div><div class='wine-entry'><div class='price'>$158</div><div class='text'>Australia, Samuel Collection Shiraz – Yalumba</div></div><div class='wine-entry'><div class='price'>$168</div><div class='text'>Italy 2016 Barolo Castelletto – Manzone</div></div><div class='wine-entry'><div class='price'>$168</div><div class='text'>Italy 2014 Casanese di Olevano Romano Superiore Silene – Ciolli</div></div><div class='wine-entry'><div class='price'>$168</div><div class='text'>Greece, Syrah Kotsifali – nan</div></div><div class='wine-entry'><div class='price'>$168</div><div class='text'>South 2018 Shoilto Mitre's – Edge</div></div><div class='wine-entry'><div class='price'>$178</div><div class='text'>Italy 2019 Torrione – Petrolo</div></div><div class='wine-entry'><div class='price'>$178</div><div class='text'>Italy 2015 Rosso Val di Neto Gravello – Librandi</div></div><div class='wine-entry'><div class='price'>$178</div><div class='text'>South 2019 The Mitre Mitre's – Edge</div></div><div class='wine-entry'><div class='price'>$188</div><div class='text'>Italy 2020 Barbaresco Vanotu – Pelissero</div></div><div class='wine-entry'><div class='price'>$188</div><div class='text'>Italy 2019 Amarone Cavolo – Brigaldara</div></div><div class='wine-entry'><div class='price'>$188</div><div class='text'>Italy 2018 Chianti Classico Badia a Passignano – Antinori</div></div><div class='wine-entry'><div class='price'>$188</div><div class='text'>Italy 2012 Montefalco Sagrantino – Colpetrone</div></div><div class='wine-entry'><div class='price'>$188</div><div class='text'>France, Fleurie Coup d’Folie Les – Bertrand</div></div><div class='wine-entry'><div class='price'>$188</div><div class='text'>South 2020 Cabernet Franc Rainbow's – End</div></div><div class='wine-entry'><div class='price'>$198</div><div class='text'>Italy 2009 Granato – Foradori</div></div><div class='wine-entry'><div class='price'>$198</div><div class='text'>Italy 2013 Barolo Gramolere – Manzoni</div></div><div class='wine-entry'><div class='price'>$198</div><div class='text'>Italy 2019 Brunello di Montalcino – MastroJanni</div></div><div class='wine-entry'><div class='price'>$198</div><div class='text'>South 2016 Oldenburg – Vineyards</div></div><h2 id='SweetWines'>Sweet Wines</h2><div class='wine-entry'><div class='price'>$58</div><div class='text'>Italy 2023 Moscato d'Asto – Pelissero</div></div><div class='wine-entry'><div class='price'>$98</div><div class='text'>Italy NV Jarno Passito – Castorani</div></div>
+<h1 style="text-align: center; padding: 0.3em 0; font-size: 1.6em; background-color: #e5e0d3; margin: 0;">
+SOMMELIER SELECTION UNDER $198
+</h1>
+<div style="text-align: right; padding: 0.3em 1em 0.1em 1em;">
+<button aria-label="Search" onclick="toggleSearch()" style="background: none; border: none; font-size: 1.5em; cursor: pointer;">🔍</button>
+<input id="searchInput" placeholder="Search a wine..." style="display:none; margin-top: 10px; padding: 10px; width: 80%; font-size: 1em; font-family: 'EB Garamond', serif; border: 1px solid #ccc; border-radius: 5px;" type="text"/>
+</div>
 <script>
-function searchWines() {
+function toggleSearch() {
   var input = document.getElementById("searchInput");
-  var filter = input.value.toLowerCase();
-  var wines = document.getElementsByClassName("wine-entry");
-  for (var i = 0; i < wines.length; i++) {
-    var txt = wines[i].innerText;
-    wines[i].style.display = txt.toLowerCase().includes(filter) ? "" : "none";
-  }
+  input.style.display = input.style.display === "none" ? "block" : "none";
+  if (input.style.display === "block") input.focus();
 }
+document.getElementById("searchInput").addEventListener("input", function() {
+  var input = this.value.toLowerCase();
+  var entries = document.querySelectorAll(".entry");
+  var sections = document.querySelectorAll("section h2");
+  entries.forEach(function(entry) {
+    if (entry.textContent.toLowerCase().includes(input)) {
+      entry.style.display = "block";
+    } else {
+      entry.style.display = "none";
+    }
+  });
+  sections.forEach(function(section) {
+    section.style.display = input.length > 0 ? "none" : "block";
+  });
+});
 </script>
-</body>
-</html>
+<nav>
+<a href="#SHEET1">Sheet1</a>
+</nav>
+<section id="SHEET1">
+<h2 style="margin-left: 110px;">Sheet1</h2>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+<div class="entry" style="margin-left: 110px;">${row[0]}  {row[1]}</div>
+</section>
+</body></html>
