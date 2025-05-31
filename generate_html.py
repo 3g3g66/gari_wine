@@ -16,8 +16,8 @@ client = gspread.authorize(creds)
 
 # Apri il file Google Sheet
 sheet = client.open("Sommelier_Selection_Garibaldi_Optimized")
-worksheet = sheet.sheet1
-data = worksheet.get_all_values()
+data = sheet.get_all_values()
+df = pd.DataFrame(data[1:], columns=data[0])
 
 # Inizializza l'HTML
 html = """<!DOCTYPE html>
