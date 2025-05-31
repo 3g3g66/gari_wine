@@ -103,7 +103,7 @@ document.getElementById("searchInput").addEventListener("input", function() {
 
 # Append sections and entries
 for section, anchor in section_anchors.items():
-    html += f'<section id="{anchor}">
+    html += f'<section id="some-id">'
 <h2>{section}</h2>
 '
     wines = df[df['Sezione'] == section]
