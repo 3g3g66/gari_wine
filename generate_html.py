@@ -27,6 +27,7 @@ html = """<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8"/>
+  <link rel="apple-touch-icon" href="icon.png"/>
   <title>Wine List</title>
   <style>
     body {
