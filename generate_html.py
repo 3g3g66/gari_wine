@@ -1,3 +1,4 @@
+import re
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import os
@@ -124,7 +125,7 @@ sections = defaultdict(list)
 for row in data[1:]:  # salta intestazione
     if len(row) < 4:
         continue
-    category = row[0].strip().upper().replace(" ", "_").replace("&", "AND")  # A
+    category = re.sub(r'\W+', '_', row[0].strip().upper())
     price = row[1].strip()     # B – Prezzo
     nation = row[2].strip()    # C – Nazione
     region = row[3].strip()    # D – Regione
