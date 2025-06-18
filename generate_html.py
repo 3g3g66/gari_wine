@@ -63,6 +63,11 @@ html = '''<!DOCTYPE html>
       entries.forEach(function(entry) {
         entry.style.display = entry.textContent.toLowerCase().includes(input) ? "flex" : "none";
       });
+      // Chiudi search bar all'avvio
+     window.addEventListener("DOMContentLoaded", function() {
+     document.getElementById("searchInput").style.display = "none";
+    });
+
       sections.forEach(function(section) {
         section.style.display = input.length > 0 ? "none" : "block";
       });
