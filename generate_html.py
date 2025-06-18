@@ -35,6 +35,7 @@ html = '''<!DOCTYPE html>
   font-size: 1em;
   padding: 0.3em 0;
   border-bottom: 1px solid #ddd5c8;
+  margin-left: 110px;
 }
     .label { max-width: 70%; }
     .price { font-weight: bold; white-space: nowrap; }
