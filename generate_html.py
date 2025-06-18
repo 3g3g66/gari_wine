@@ -82,8 +82,8 @@ for row in data:
     year = row[4].strip()
     wine = row[5].strip()
     producer = row[6].strip()
-    label = f"<strong>${price}</strong>  {nation}  {region} – {year}  {wine}  {producer}"
-    entry_html = f"<div class='wine-entry'>{label}</div>"
+    entry_html = f"<div class='wine-entry'><strong>${price}</strong>&nbsp;&nbsp;{nation}  {region} – {year}  {wine}  {producer}</div>"
+
     
     sections[section].append(entry_html)
 
