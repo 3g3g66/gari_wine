@@ -1,118 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8"/>
+  <meta charset='utf-8'/>
   <title>Wine List</title>
   <style>
-    body {
-      font-family: 'EB Garamond', serif;
-      background-color: #f0eee4;
-      color: #17110c;
-      margin: 0;
-      padding: 0;
-    }
-    h1 {
-      text-align: center;
-      padding: 1em;
-      font-size: 1.6em;
-      background-color: #e5e0d3;
-      margin: 0;
-    }
-    .entry {
-      margin-left: 110px;
-      padding: 0.5em 0;
-      border-bottom: 1px solid #ddd5c8;
-      font-size: 1em;
-    }
+    body { font-family: 'EB Garamond', serif; background-color: #f0eee4; color: #17110c; margin: 0; padding: 0; }
+    h1 { text-align: center; padding: 1em; font-size: 1.6em; background-color: #e5e0d3; margin: 0; }
+    nav { position: sticky; top: 0; background: #f0eee4; border-bottom: 1px solid #ccc; padding: 10px; text-align: center; z-index: 10; }
+    nav a { margin: 0 8px; text-decoration: none; font-weight: bold; font-size: 1.05em; color: #17110c; }
+    .wine-entry { display: flex; justify-content: space-between; margin-left: 110px; margin-right: 40px; padding: 0.3em 0; border-bottom: 1px solid #ddd5c8; }
+    .label { max-width: 70%; }
+    .price { font-weight: bold; white-space: nowrap; }
+    h2 { margin-left: 110px; font-size: 1.2em; margin-top: 2em; padding-top: 1em; border-top: 1px solid #ccc; font-weight: bold; }
+    #searchInput { display: none; margin: 10px auto; padding: 10px; width: 80%; font-size: 1em; font-family: 'EB Garamond', serif; border: 1px solid #ccc; border-radius: 5px; display: block; }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet"/>
+  <link href='https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap' rel='stylesheet'/>
 </head>
 <body>
-  <h1>Garibaldi Wine List</h1>
-<div class="entry">NV – Prosecco Extra Dry (Botter) <strong>$58</strong></div>
-<div class="entry">NV – Franciacorta Alma (Bellavista) <strong>$98</strong></div>
-<div class="entry">2011 – Anna Luise Domaine Des (Dieux) <strong>$118</strong></div>
-<div class="entry">Pol – Roger (Brut) <strong>$128</strong></div>
-<div class="entry">Billecart – Salmon (Rosé) <strong>$188</strong></div>
-<div class="entry">2023 – Pinot Grigio Castele Reguta di (Anselmi) <strong>$58</strong></div>
-<div class="entry">2021 – Cadetto Trebbiano (Castorani) <strong>$68</strong></div>
-<div class="entry">Chenin – Blanc (Fratelli) <strong>$68</strong></div>
-<div class="entry">M/S – White Chardonnay Sauvignon (Fratelli) <strong>$68</strong></div>
-<div class="entry">2023 – Lugana Montunal (Montonale) <strong>$78</strong></div>
-<div class="entry">2021 – Trebbiano D'Abruzzo Riserva (Castorani) <strong>$88</strong></div>
-<div class="entry">2022 – Chardonnay (Capannelle) <strong>$98</strong></div>
-<div class="entry">2023 – Alice Verdeca Produttori di (Manduria) <strong>$98</strong></div>
-<div class="entry">2023 – Sauvignon Blanc La (Tunella) <strong>$108</strong></div>
-<div class="entry">2023 – Timorasso (Volpe) <strong>$118</strong></div>
-<div class="entry">2021 – Lugana Orestilla (Montonale) <strong>$118</strong></div>
-<div class="entry">Chablis – Louis (Moreau) <strong>$118</strong></div>
-<div class="entry">2022 – Chenin Kliprug (Kaapziucht) <strong>$118</strong></div>
-<div class="entry">2019 – From Black to White (Zyme) <strong>$128</strong></div>
-<div class="entry">2021 – Gewurztraminer Franz (Haas) <strong>$128</strong></div>
-<div class="entry">2023 – Poggio Argentato Fattoria le (Pupille) <strong>$128</strong></div>
-<div class="entry">2023 – Bramito della Sala (Antinori) <strong>$138</strong></div>
-<div class="entry">2020 – Capitel Foscarino (Anselmi) <strong>$138</strong></div>
-<div class="entry">2021 – Manna Franz (Haas) <strong>$138</strong></div>
-<div class="entry">2020 – Val di Neto Efeso (Librandi) <strong>$148</strong></div>
-<div class="entry">2015 – Chardonnay (Magliarina) <strong>$148</strong></div>
-<div class="entry">2013 – Lugana Montunal (Montonale) <strong>$178</strong></div>
-<div class="entry">Chablis – Joseph (Drouhin) <strong>$178</strong></div>
-<div class="entry">2019 – Hope Marguerite (Beaumont) <strong>$178</strong></div>
-<div class="entry">2009 – Lugana Montunal (Montonale) <strong>$188</strong></div>
-<div class="entry">2020 – Cervaro della Sala (Antinori) <strong>$188</strong></div>
-<div class="entry">Pouilly-Fuisse – Joseph (Drouhin) <strong>$198</strong></div>
-<div class="entry">2018 – Fynbos Single Vineyard Chardonnay (Iona) <strong>$198</strong></div>
-<div class="entry">2021 – Aka Primitivo Rosato Produttori di (Manduria) <strong>$68</strong></div>
-<div class="entry">2021 – Amorino Cerasuolo D'Abruzzo (Castorani) <strong>$98</strong></div>
-<div class="entry">2021 – Orange Wine Lupaia (Castorani) <strong>$98</strong></div>
-<div class="entry">2021 – Rosa di Notte (Montonale) <strong>$118</strong></div>
-<div class="entry">2020 – Pa'ro Orange Buccia (Nera) <strong>$128</strong></div>
-<div class="entry">2022 – Cadetto Montepulciano (Castorani) <strong>$68</strong></div>
-<div class="entry">2022 – Dolcetto D'Alba Augenta (Pelissero) <strong>$78</strong></div>
-<div class="entry">2020 – Lupaia Cabernet (Castorani) <strong>$78</strong></div>
-<div class="entry">2021 – Barbera Piani (Pelissero) <strong>$88</strong></div>
-<div class="entry">2020 – Amorino Montepulciano (Castorani) <strong>$88</strong></div>
-<div class="entry">2018 – Malvasia Nera (Capannelle) <strong>$88</strong></div>
-<div class="entry">2022 – Nebbiolo Langhe (Pelissero) <strong>$98</strong></div>
-<div class="entry">2021 – Chianti Riserva (Capannelle) <strong>$98</strong></div>
-<div class="entry">M/S – Red (Fratelli) <strong>$98</strong></div>
-<div class="entry">2018 – Chianti Classico Gran Selezione (Capannelle) <strong>$118</strong></div>
-<div class="entry">2020 – Cabernet Sauvignon Rainbow's (End) <strong>$118</strong></div>
-<div class="entry">2019 – Long Now (Pelissero) <strong>$128</strong></div>
-<div class="entry">2019 – Campofiorin (Masi) <strong>$128</strong></div>
-<div class="entry">2017 – Montepulciano Riserva Casauria (Castorani) <strong>$128</strong></div>
-<div class="entry">2020 – Primitivo Elegia Riserva Produttori Di (manduria) <strong>$128</strong></div>
-<div class="entry">2018 – Carmenere Reserva Casas del (Bosque) <strong>$128</strong></div>
-<div class="entry">2021 – Pinot Nero Franz (Haas) <strong>$138</strong></div>
-<div class="entry">2020 – Barbaresco Nubiola (Pelissero) <strong>$138</strong></div>
-<div class="entry">Pinot – Noir Mount (Riley) <strong>$138</strong></div>
-<div class="entry">2016 – Teroldego (Detarczai) <strong>$148</strong></div>
-<div class="entry">2018 – Marzemino (Detarczai) <strong>$148</strong></div>
-<div class="entry">Kotsifali – Lyrarakis () <strong>$148</strong></div>
-<div class="entry">2018 – Pinotage (Beaumat) <strong>$148</strong></div>
-<div class="entry">Tasmanian – Pinot Noir (Dalrymple) <strong>$148</strong></div>
-<div class="entry">2019 – Brunello di Montalcino La (Gerla) <strong>$158</strong></div>
-<div class="entry">2020 – Family Reserve Rainbow's (End) <strong>$158</strong></div>
-<div class="entry">Samuel – Collection Shiraz (Yalumba) <strong>$158</strong></div>
-<div class="entry">2016 – Barolo Castelletto (Manzone) <strong>$168</strong></div>
-<div class="entry">2014 – Casanese di Olevano Romano Superiore Silene (Ciolli) <strong>$168</strong></div>
-<div class="entry">Syrah – Kotsifali () <strong>$168</strong></div>
-<div class="entry">2018 – Shoilto Mitre's (Edge) <strong>$168</strong></div>
-<div class="entry">2019 – Torrione (Petrolo) <strong>$178</strong></div>
-<div class="entry">2015 – Rosso Val di Neto Gravello (Librandi) <strong>$178</strong></div>
-<div class="entry">2019 – The Mitre Mitre's (Edge) <strong>$178</strong></div>
-<div class="entry">2020 – Barbaresco Vanotu (Pelissero) <strong>$188</strong></div>
-<div class="entry">2019 – Amarone Cavolo (Brigaldara) <strong>$188</strong></div>
-<div class="entry">2018 – Chianti Classico Badia a Passignano (Antinori) <strong>$188</strong></div>
-<div class="entry">2012 – Montefalco Sagrantino (Colpetrone) <strong>$188</strong></div>
-<div class="entry">Fleurie – Coup d’Folie Les (Bertrand) <strong>$188</strong></div>
-<div class="entry">2020 – Cabernet Franc Rainbow's (End) <strong>$188</strong></div>
-<div class="entry">2009 – Granato (Foradori) <strong>$198</strong></div>
-<div class="entry">2013 – Barolo Gramolere (Manzoni) <strong>$198</strong></div>
-<div class="entry">2019 – Brunello di Montalcino (MastroJanni) <strong>$198</strong></div>
-<div class="entry">2016 – Oldenburg (Vineyards) <strong>$198</strong></div>
-<div class="entry">2023 – Moscato d'Asti (Pelissero) <strong>$58</strong></div>
-<div class="entry">NV – Jarno Passito (Castorani) <strong>$98</strong></div>
-
-</body>
-</html>
+  <h1>SOMMELIER SELECTION UNDER $198</h1>
+  <div style="text-align: right; padding: 0.3em 1em 0.1em 1em;">
+    <button aria-label="Search" onclick="toggleSearch()" style="background: none; border: none; font-size: 1.5em; cursor: pointer;">🔍</button>
+    <input id="searchInput" placeholder="Search a wine..." type="text"/>
+  </div>
+  <script>
+    function toggleSearch() {
+      var input = document.getElementById("searchInput");
+      input.style.display = input.style.display === "none" ? "block" : "none";
+      if (input.style.display === "block") input.focus();
+    }
+    document.getElementById("searchInput").addEventListener("input", function() {
+      var input = this.value.toLowerCase();
+      var entries = document.querySelectorAll(".wine-entry");
+      var sections = document.querySelectorAll("section h2");
+      entries.forEach(function(entry) {
+        entry.style.display = entry.textContent.toLowerCase().includes(input) ? "flex" : "none";
+      });
+      sections.forEach(function(section) {
+        section.style.display = input.length > 0 ? "none" : "block";
+      });
+    });
+  </script>
+  <nav>
+    <a href="#SPARKLING_WINES">Sparkling Wines</a>
+    <a href="#WHITE_WINES">White Wines</a>
+    <a href="#ROSÉ_ORANGE_WINE">Rosé & Orange Wine</a>
+    <a href="#RED_WINES">Red Wines</a>
+    <a href="#SWEET_WINES">Sweet Wines</a>
+  </nav>
+<section id="SPARKLING_WINES"><h2>Sparkling Wines</h2><div class='wine-entry'><div class='label'>NV – Prosecco Extra Dry – Botter</div><div class='price'>$58</div></div>
+<div class='wine-entry'><div class='label'>NV – Franciacorta Alma – Bellavista</div><div class='price'>$98</div></div>
+<div class='wine-entry'><div class='label'>2011 – Anna Luise Domaine Des – Dieux</div><div class='price'>$118</div></div>
+<div class='wine-entry'><div class='label'>Pol – Roger – Brut</div><div class='price'>$128</div></div>
+<div class='wine-entry'><div class='label'>Billecart – Salmon – Rosé</div><div class='price'>$188</div></div></section><section id="WHITE_WINES"><h2>White Wines</h2><div class='wine-entry'><div class='label'>2023 – Pinot Grigio Castele Reguta di – Anselmi</div><div class='price'>$58</div></div>
+<div class='wine-entry'><div class='label'>2021 – Cadetto Trebbiano – Castorani</div><div class='price'>$68</div></div>
+<div class='wine-entry'><div class='label'>Chenin – Blanc – Fratelli</div><div class='price'>$68</div></div>
+<div class='wine-entry'><div class='label'>M/S – White Chardonnay Sauvignon – Fratelli</div><div class='price'>$68</div></div>
+<div class='wine-entry'><div class='label'>2023 – Lugana Montunal – Montonale</div><div class='price'>$78</div></div>
+<div class='wine-entry'><div class='label'>2021 – Trebbiano D'Abruzzo Riserva – Castorani</div><div class='price'>$88</div></div>
+<div class='wine-entry'><div class='label'>2022 – Chardonnay – Capannelle</div><div class='price'>$98</div></div>
+<div class='wine-entry'><div class='label'>2023 – Alice Verdeca Produttori di – Manduria</div><div class='price'>$98</div></div>
+<div class='wine-entry'><div class='label'>2023 – Sauvignon Blanc La – Tunella</div><div class='price'>$108</div></div>
+<div class='wine-entry'><div class='label'>2023 – Timorasso – Volpe</div><div class='price'>$118</div></div>
+<div class='wine-entry'><div class='label'>2021 – Lugana Orestilla – Montonale</div><div class='price'>$118</div></div>
+<div class='wine-entry'><div class='label'>Chablis – Louis – Moreau</div><div class='price'>$118</div></div>
+<div class='wine-entry'><div class='label'>2022 – Chenin Kliprug – Kaapziucht</div><div class='price'>$118</div></div>
+<div class='wine-entry'><div class='label'>2019 – From Black to White – Zyme</div><div class='price'>$128</div></div>
+<div class='wine-entry'><div class='label'>2021 – Gewurztraminer Franz – Haas</div><div class='price'>$128</div></div>
+<div class='wine-entry'><div class='label'>2023 – Poggio Argentato Fattoria le – Pupille</div><div class='price'>$128</div></div>
+<div class='wine-entry'><div class='label'>2023 – Bramito della Sala – Antinori</div><div class='price'>$138</div></div>
+<div class='wine-entry'><div class='label'>2020 – Capitel Foscarino – Anselmi</div><div class='price'>$138</div></div>
+<div class='wine-entry'><div class='label'>2021 – Manna Franz – Haas</div><div class='price'>$138</div></div>
+<div class='wine-entry'><div class='label'>2020 – Val di Neto Efeso – Librandi</div><div class='price'>$148</div></div>
+<div class='wine-entry'><div class='label'>2015 – Chardonnay – Magliarina</div><div class='price'>$148</div></div>
+<div class='wine-entry'><div class='label'>2013 – Lugana Montunal – Montonale</div><div class='price'>$178</div></div>
+<div class='wine-entry'><div class='label'>Chablis – Joseph – Drouhin</div><div class='price'>$178</div></div>
+<div class='wine-entry'><div class='label'>2019 – Hope Marguerite – Beaumont</div><div class='price'>$178</div></div>
+<div class='wine-entry'><div class='label'>2009 – Lugana Montunal – Montonale</div><div class='price'>$188</div></div>
+<div class='wine-entry'><div class='label'>2020 – Cervaro della Sala – Antinori</div><div class='price'>$188</div></div>
+<div class='wine-entry'><div class='label'>Pouilly-Fuisse – Joseph – Drouhin</div><div class='price'>$198</div></div>
+<div class='wine-entry'><div class='label'>2018 – Fynbos Single Vineyard Chardonnay – Iona</div><div class='price'>$198</div></div></section><section id="ROSÉ_ORANGE_WINE"><h2>Rosé Orange Wine</h2><div class='wine-entry'><div class='label'>2021 – Aka Primitivo Rosato Produttori di – Manduria</div><div class='price'>$68</div></div>
+<div class='wine-entry'><div class='label'>2021 – Amorino Cerasuolo D'Abruzzo – Castorani</div><div class='price'>$98</div></div>
+<div class='wine-entry'><div class='label'>2021 – Orange Wine Lupaia – Castorani</div><div class='price'>$98</div></div>
+<div class='wine-entry'><div class='label'>2021 – Rosa di Notte – Montonale</div><div class='price'>$118</div></div>
+<div class='wine-entry'><div class='label'>2020 – Pa'ro Orange Buccia – Nera</div><div class='price'>$128</div></div></section><section id="RED_WINES"><h2>Red Wines</h2><div class='wine-entry'><div class='label'>2022 – Cadetto Montepulciano – Castorani</div><div class='price'>$68</div></div>
+<div class='wine-entry'><div class='label'>2022 – Dolcetto D'Alba Augenta – Pelissero</div><div class='price'>$78</div></div>
+<div class='wine-entry'><div class='label'>2020 – Lupaia Cabernet – Castorani</div><div class='price'>$78</div></div>
+<div class='wine-entry'><div class='label'>2021 – Barbera Piani – Pelissero</div><div class='price'>$88</div></div>
+<div class='wine-entry'><div class='label'>2020 – Amorino Montepulciano – Castorani</div><div class='price'>$88</div></div>
+<div class='wine-entry'><div class='label'>2018 – Malvasia Nera – Capannelle</div><div class='price'>$88</div></div>
+<div class='wine-entry'><div class='label'>2022 – Nebbiolo Langhe – Pelissero</div><div class='price'>$98</div></div>
+<div class='wine-entry'><div class='label'>2021 – Chianti Riserva – Capannelle</div><div class='price'>$98</div></div>
+<div class='wine-entry'><div class='label'>M/S – Red – Fratelli</div><div class='price'>$98</div></div>
+<div class='wine-entry'><div class='label'>2018 – Chianti Classico Gran Selezione – Capannelle</div><div class='price'>$118</div></div>
+<div class='wine-entry'><div class='label'>2020 – Cabernet Sauvignon Rainbow's – End</div><div class='price'>$118</div></div>
+<div class='wine-entry'><div class='label'>2019 – Long Now – Pelissero</div><div class='price'>$128</div></div>
+<div class='wine-entry'><div class='label'>2019 – Campofiorin – Masi</div><div class='price'>$128</div></div>
+<div class='wine-entry'><div class='label'>2017 – Montepulciano Riserva Casauria – Castorani</div><div class='price'>$128</div></div>
+<div class='wine-entry'><div class='label'>2020 – Primitivo Elegia Riserva Produttori Di – manduria</div><div class='price'>$128</div></div>
+<div class='wine-entry'><div class='label'>2018 – Carmenere Reserva Casas del – Bosque</div><div class='price'>$128</div></div>
+<div class='wine-entry'><div class='label'>2021 – Pinot Nero Franz – Haas</div><div class='price'>$138</div></div>
+<div class='wine-entry'><div class='label'>2020 – Barbaresco Nubiola – Pelissero</div><div class='price'>$138</div></div>
+<div class='wine-entry'><div class='label'>Pinot – Noir Mount – Riley</div><div class='price'>$138</div></div>
+<div class='wine-entry'><div class='label'>2016 – Teroldego – Detarczai</div><div class='price'>$148</div></div>
+<div class='wine-entry'><div class='label'>2018 – Marzemino – Detarczai</div><div class='price'>$148</div></div>
+<div class='wine-entry'><div class='label'>Kotsifali – Lyrarakis – </div><div class='price'>$148</div></div>
+<div class='wine-entry'><div class='label'>2018 – Pinotage – Beaumat</div><div class='price'>$148</div></div>
+<div class='wine-entry'><div class='label'>Tasmanian – Pinot Noir – Dalrymple</div><div class='price'>$148</div></div>
+<div class='wine-entry'><div class='label'>2019 – Brunello di Montalcino La – Gerla</div><div class='price'>$158</div></div>
+<div class='wine-entry'><div class='label'>2020 – Family Reserve Rainbow's – End</div><div class='price'>$158</div></div>
+<div class='wine-entry'><div class='label'>Samuel – Collection Shiraz – Yalumba</div><div class='price'>$158</div></div>
+<div class='wine-entry'><div class='label'>2016 – Barolo Castelletto – Manzone</div><div class='price'>$168</div></div>
+<div class='wine-entry'><div class='label'>2014 – Casanese di Olevano Romano Superiore Silene – Ciolli</div><div class='price'>$168</div></div>
+<div class='wine-entry'><div class='label'>Syrah – Kotsifali – </div><div class='price'>$168</div></div>
+<div class='wine-entry'><div class='label'>2018 – Shoilto Mitre's – Edge</div><div class='price'>$168</div></div>
+<div class='wine-entry'><div class='label'>2019 – Torrione – Petrolo</div><div class='price'>$178</div></div>
+<div class='wine-entry'><div class='label'>2015 – Rosso Val di Neto Gravello – Librandi</div><div class='price'>$178</div></div>
+<div class='wine-entry'><div class='label'>2019 – The Mitre Mitre's – Edge</div><div class='price'>$178</div></div>
+<div class='wine-entry'><div class='label'>2020 – Barbaresco Vanotu – Pelissero</div><div class='price'>$188</div></div>
+<div class='wine-entry'><div class='label'>2019 – Amarone Cavolo – Brigaldara</div><div class='price'>$188</div></div>
+<div class='wine-entry'><div class='label'>2018 – Chianti Classico Badia a Passignano – Antinori</div><div class='price'>$188</div></div>
+<div class='wine-entry'><div class='label'>2012 – Montefalco Sagrantino – Colpetrone</div><div class='price'>$188</div></div>
+<div class='wine-entry'><div class='label'>Fleurie – Coup d’Folie Les – Bertrand</div><div class='price'>$188</div></div>
+<div class='wine-entry'><div class='label'>2020 – Cabernet Franc Rainbow's – End</div><div class='price'>$188</div></div>
+<div class='wine-entry'><div class='label'>2009 – Granato – Foradori</div><div class='price'>$198</div></div>
+<div class='wine-entry'><div class='label'>2013 – Barolo Gramolere – Manzoni</div><div class='price'>$198</div></div>
+<div class='wine-entry'><div class='label'>2019 – Brunello di Montalcino – MastroJanni</div><div class='price'>$198</div></div>
+<div class='wine-entry'><div class='label'>2016 – Oldenburg – Vineyards</div><div class='price'>$198</div></div></section><section id="SWEET_WINES"><h2>Sweet Wines</h2><div class='wine-entry'><div class='label'>2023 – Moscato d'Asti – Pelissero</div><div class='price'>$58</div></div>
+<div class='wine-entry'><div class='label'>NV – Jarno Passito – Castorani</div><div class='price'>$98</div></div></section></body></html>
