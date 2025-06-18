@@ -31,7 +31,11 @@ html = '''<!DOCTYPE html>
     h1 { text-align: center; padding: 1em; font-size: 1.6em; background-color: #e5e0d3; margin: 0; }
     nav { position: sticky; top: 0; background: #f0eee4; border-bottom: 1px solid #ccc; padding: 10px; text-align: center; z-index: 10; }
     nav a { margin: 0 8px; text-decoration: none; font-weight: bold; font-size: 1.05em; color: #17110c; }
-    .wine-entry { display: flex; justify-content: space-between; margin-left: 110px; margin-right: 40px; padding: 0.3em 0; border-bottom: 1px solid #ddd5c8; }
+    .wine-entry {
+  font-size: 1em;
+  padding: 0.3em 0;
+  border-bottom: 1px solid #ddd5c8;
+}
     .label { max-width: 70%; }
     .price { font-weight: bold; white-space: nowrap; }
     h2 { margin-left: 110px; font-size: 1.2em; margin-top: 2em; padding-top: 1em; border-top: 1px solid #ccc; font-weight: bold; }
@@ -83,8 +87,7 @@ for row in data:
     wine = row[5].strip()
     producer = row[6].strip()
     entry_html = f"<div class='wine-entry'><strong>${price}</strong>&nbsp;&nbsp;{nation}  {region} – {year}  {wine}  {producer}</div>"
-
-    
+ 
     sections[section].append(entry_html)
 
 for section_id, wines in sections.items():
