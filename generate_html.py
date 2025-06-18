@@ -63,7 +63,7 @@ html += """
 """
 
 # Salva il file HTML
-with open("/mnt/data/generate_html_FIXED.py", "w", encoding="utf-8") as f:
-    f.write(__import__("textwrap").dedent(html))
+with open("index.html", "w", encoding="utf-8") as f:
+  f.write(__import__("textwrap").dedent(html))
 
 "/mnt/data/generate_html_FIXED.py"
