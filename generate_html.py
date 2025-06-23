@@ -46,6 +46,11 @@ html = '''<!DOCTYPE html>
 </head>
 <body>
   <h1>SOMMELIER SELECTION UNDER $198</h1>
+  <div style="margin-top: 20px; text-align: center;">
+    <a href="#startOfList" style="font-size: 16px; text-decoration: underline; color: #17110c;">
+        ← Back to Full Wine List
+    </a>
+</div>
   <div style="text-align: right; padding: 0.3em 1em 0.1em 1em;">
     <button aria-label="Search" onclick="toggleSearch()" style="background: none; border: none; font-size: 1.5em; cursor: pointer;">🔍</button>
     <input id="searchInput" style="display:none !important; margin-top: 10px; padding: 10px; width: 80%; font-size: 1em; font-family: 'EB Garamond', serif; border: 1px solid #ccc; border-radius: 5px;" type="text" />
